@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Stock Price</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('live_price', function(data) {
+            document.getElementById("stock_price").innerHTML = data;
+        });
+    </script>
+</head>
+<body>
+    <h1>Live Price for {{ STOCK_SYMBOL }}:</h1>
+    <span id="stock_price"></span>
+</body>
+</html>
